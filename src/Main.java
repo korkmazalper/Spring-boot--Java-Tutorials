@@ -1,3 +1,7 @@
+/**
+ * @author korkmaz alper
+ * @version 1.0
+ */
 public class Main {
     public static void main(String[] args) {
         House house1=House.createHouse("1",12,3,2,1);

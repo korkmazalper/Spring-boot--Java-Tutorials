@@ -7,6 +7,15 @@ public class House extends Residence {
         super(residenceID, areaInSquareMeter, numberOfLivingRooms, numberOfRooms, price);
     }
 
+    /**
+     *
+     * @param residenceID indicates the unique ID of the residence.
+     * @param areaInSquareMeter indicates the area of the house objects.
+     * @param numberOfLivingRooms indicates the number of the living rooms of the house objects.
+     * @param numberOfRooms indicates the number of rooms of the house.
+     * @param price indicated the prices of the house.
+     * @return the created House object.
+     */
     public static House createHouse(String residenceID, float areaInSquareMeter, int numberOfLivingRooms, int numberOfRooms, float price) {
         if (areaInSquareMeter > 0 && numberOfRooms > 0 && price > 0 && numberOfLivingRooms >= 0) {
             House house = new House(residenceID, areaInSquareMeter, numberOfLivingRooms, numberOfRooms, price);
@@ -17,6 +26,11 @@ public class House extends Residence {
         }
         return null;
     }
+
+    /**
+     *
+     * @return the list of all house objects.
+     */
     public List<House> getListOfAllHouses(){
         List<House> houses= new ArrayList<>();
         for (Residence residence: Residence.getListOfAll()) {
@@ -26,17 +40,38 @@ public class House extends Residence {
         }
         return houses;
     }
+
+    /**
+     *
+     * @return the total price of all house objects.
+     */
     public double getTotalPriceOfHouses(){
         return Residence.getTotalPrices( getListOfAllHouses());
     }
+
+    /**
+     *
+     * @return average area of all houses.
+     */
     public double averageAreaOfHouses(){
         return Residence.getAverageAreaOfResidences( getListOfAllHouses());
     }
+
+    /**
+     *
+     * @param numberOfRooms indicates the filter to be applied to limit the number of rooms of the houses to be selected.
+     * @return the list of the houses having specified number of rooms in the parameter of the method.
+     */
 
     public List<Residence> filterByNumberOfRooms(int numberOfRooms){
         return super.filterByNumberOfRooms(getListOfAllHouses(),numberOfRooms);
     }
 
+    /**
+     *
+     * @param numberOfLivingRooms indicates the filter to be applied to limit the number of living rooms of the houses to be selected.
+     * @return the list of the houses having specified number of living rooms in the parameter of the method.
+     */
     public List<Residence> filterByNumberOfLivingRooms(int numberOfLivingRooms){
         return super.filterByNumberOfLivingRooms(getListOfAllHouses(),numberOfLivingRooms);
     }

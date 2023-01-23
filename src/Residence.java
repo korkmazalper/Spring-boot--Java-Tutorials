@@ -27,6 +27,13 @@ public abstract class Residence {
         this.numberOfRooms = numberOfRooms;
         this.price = price;
     }
+
+    /**
+     *
+     * @param recidences indicates the list of objects of type Residence or of that inherited from Residence.
+     * @return total price of all items given in the List of type Residence or the types that inherit Residence.
+     * @param <T> indicates the generics types
+     */
     public static <T extends Residence> double getTotalPrices(List<T> recidences){
         double totalPrice=0;
         for (Residence r : recidences) {
@@ -34,6 +41,13 @@ public abstract class Residence {
         }
         return totalPrice;
     }
+
+    /**
+     *
+     * @param residences indicates the list of objects of type Residence or of that inherited from Residence.
+     * @return the average area of the items given in the List of type Residence or the types that inherit Residence.
+     * @param <T> indicates the generics types
+     */
     public static <T extends Residence> double getAverageAreaOfResidences(List<T> residences){
         double totalAreaOfResidecences=0;
         for (Residence r : residences) {
@@ -41,6 +55,14 @@ public abstract class Residence {
         }
         return totalAreaOfResidecences/residences.size();
     }
+
+    /**
+     *
+     * @param residences indicates the list of objects of type Residence or of that inherited from Residence.
+     * @param numberOfRooms indicates the number of rooms to be filtered.
+     * @return filter the List of Residences or the Object inherited from Residence with respect to numberOfRooms.
+     * @param <T> indicates the generics types
+     */
     public static <T extends Residence> List<Residence> filterByNumberOfRooms(List<T> residences, int numberOfRooms){
         List<Residence> filteredList=new ArrayList<>();
         for (Residence r : residences) {
@@ -50,6 +72,14 @@ public abstract class Residence {
         }
        return filteredList;
     }
+
+    /**
+     *
+     * @param residences indicates the list of objects of type Residence or of that inherited from Residence.
+     * @param numberOfLivingRooms indicates the number of living rooms to be filtered.
+     * @return filter the List of Residences or the Object inherited from Residence with respect to numberOfLivingRooms.
+     * @param <T> indicates the generics types
+     */
     public static <T extends Residence> List<Residence> filterByNumberOfLivingRooms(List<T> residences, int numberOfLivingRooms){
         List<Residence> filteredList=new ArrayList<>();
         for (Residence r : residences) {
