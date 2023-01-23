@@ -9,6 +9,7 @@ public class Main {
         System.out.println(house1.toString());
         System.out.println(Residence.getListOfAll());
         System.out.println(house1.getListOfAllHouses());
+
         System.out.println(villa1.getListOfAllVillas());
         System.out.println("================================");
         System.out.println(house1.getTotalPriceOfHouses());
