@@ -1,3 +1,5 @@
+import java.util.stream.Collectors;
+
 /**
  * @author korkmaz alper
  * @version 1.0
@@ -36,7 +38,9 @@ public class Main {
         System.out.println(summerHouse3.filterByNumberOfRooms(2));
         System.out.println(summerHouse3.filterByNumberOfLivingRooms(2));
         System.out.println("================================");
+        System.out.println(Residence.getListOfAll().stream().filter(x->x.getClass().getSimpleName().equals("House")).collect(Collectors.toList()));
 
+        System.out.println(house1.getListOfAllHouses());
 
 
     }

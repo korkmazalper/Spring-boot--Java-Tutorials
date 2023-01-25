@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Villa extends Residence {
 
@@ -29,14 +30,8 @@ public class Villa extends Residence {
      *
      * @return the list of all villas.
      */
-    public List<Villa> getListOfAllVillas(){
-        List<Villa> villas= new ArrayList<>();
-        for (Residence residence: Residence.getListOfAll()) {
-            if(residence.getClass().getSimpleName().equals(this.getClass().getSimpleName())){
-                villas.add( (Villa) residence);
-            }
-        }
-        return villas;
+    public List<Residence> getListOfAllVillas(){
+       return Residence.getListOfAll().stream().filter(x -> x.getClass().getSimpleName().equals("Villa")).collect(Collectors.toList());
     }
     /**
      *
