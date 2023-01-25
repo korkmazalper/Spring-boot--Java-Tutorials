@@ -7,6 +7,11 @@ public abstract class Residence {
     private int numberOfLivingRooms;
     private int numberOfRooms;
     private double price;
+    /**
+     * Warning: The static List variable is used to simplify the problem. In real projects it is not advised to be used.
+     * This usage causes various problems. The first one is that the garbage collector can not delete the objects in the list.
+     * That means some extra solutions to delete this objects from the list should be considered when an object is deleted.
+     */
     private static List<Residence> listOfAll =new ArrayList<>();
 
     public static List<Residence> getListOfAll() {

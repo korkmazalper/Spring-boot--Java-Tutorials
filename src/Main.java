@@ -37,5 +37,7 @@ public class Main {
         System.out.println(summerHouse3.filterByNumberOfLivingRooms(2));
         System.out.println("================================");
 
+
+
     }
 }
